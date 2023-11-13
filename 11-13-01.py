@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import datetime
+a = 0
 
-time = datetime.date.today()
+for i in range(1,1000):
+    if i % 3 == 0:
+        a = a + i
+    elif i % 5 == 0:
+        a = a + i
+    else :
+        i += 1
 
-print(time)
+print(a)
