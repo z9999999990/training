@@ -9,9 +9,7 @@ def main():
             a = a + i
         elif i % 5 == 0:
             a = a + i
-        else :
-            i += 1
-
+            
     print(a)
 
 
