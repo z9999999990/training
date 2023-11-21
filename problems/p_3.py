@@ -2,7 +2,20 @@
 # coding = utf-8
 
 
-def main():
+"""
+Largest Prime Factor
+
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143?
+"""
+
+PID = 3
+ANSWER = ''
+
+
+def solve() -> int:
+    
     s = 600851475143
 
     for i in range(2, s):
@@ -11,6 +24,5 @@ def main():
             print((i), end=",")
             s = result
 
+    return s
 
-if __name__ == "__main__" :
-    main()
