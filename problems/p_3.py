@@ -11,11 +11,11 @@ What is the largest prime factor of the number 600851475143?
 """
 
 PID = 3
-ANSWER = ''
+ANSWER = 6857
 
 
 def solve() -> int:
-    
+
     s = 600851475143
 
     for i in range(2, s):
