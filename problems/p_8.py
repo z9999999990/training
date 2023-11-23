@@ -22,7 +22,7 @@ def solve() -> int():
 
 
     lenth = len(list_number)
-    result_list = []
+    result_list = [1]
 
     while b <= lenth:
         s = 1
@@ -34,7 +34,9 @@ def solve() -> int():
         
         a += 1
         b += 1
-        result_list.append(s)
-        
+
+        if s > result_list[-1]:
+            result_list.append(s)
+        #result_list.append(s)
         
     return max(result_list)
