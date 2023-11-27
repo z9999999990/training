@@ -10,11 +10,11 @@ Find the sum of all the primes below two million.
 """
 
 PID = 10
-ANSWER = ''
+ANSWER = 142913828922
 
 
 def solve() -> int :
-    list_p =[2,3,5]
+    list_p =[2, 3]
 
     a = list_p[-1]
     sum = 0
@@ -24,11 +24,12 @@ def solve() -> int :
         for p in list_p:
             if a % p == 0:
                 is_prime = False
-                continue
+                break
+            if p * p > a:
+                break
         if is_prime:
+            sum = sum + a
             list_p.append(a)
-        a += 2
-
-    for i in list_p:
-        sum = sum + i
+    a += 2
+    sum = sum + 2
     return sum
