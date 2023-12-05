@@ -21,5 +21,27 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 PID = 14
 ANSWER = ''
 
-def solve() -> int :
+def len_count(n):
+    p_list = [] 
+    while n != 4:
+        if n % 2 == 0:
+            n = int(n / 2)
+            p_list.append(n)
+        elif n % 2 != 0:
+            n = int(3 * n + 1)
+            p_list.append(n)
+    lenth = len(p_list) + 3
     
+    return lenth
+
+
+def solve() -> int :
+    final_lenth = 0
+    final_n = 0
+    for n in range(1, 1000000):
+        lenth = len_count(n)
+        if lenth > final_lenth:
+            final_lenth = lenth
+            final_n = n
+    
+    return final_n
