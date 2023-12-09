@@ -2,9 +2,7 @@
 # coding = utf-8
 
 """
-
 Summation of Primes
-
 Find the sum of all the primes below two million.
 
 """
