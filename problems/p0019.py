@@ -16,7 +16,8 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 PID = 19
 ANSWER = 171
 
-Month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+MONTH = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
 
 def leap_year(year): 
     if year % 4 == 0:
@@ -31,10 +32,10 @@ def solve() -> int:
     sum = 0
 
     for year in range(1901, 2001):
-        for month in (1, 13):
+        for month in range(1, 13):
             if days % 7 == 6:
                 sum += 1
-            days = days + Month[month]
+            days += MONTH[month]
             if month == 2 and leap_year(year):
                 days += 1
 
