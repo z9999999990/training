@@ -9,7 +9,7 @@ Find the sum of the digits in the number 100!.
 """
 
 PID = 20
-ANSWER = ''
+ANSWER = 648
 
 num = 100
 
