@@ -13,8 +13,30 @@ What is the total of all the name scores in the file?
 """
 
 PID = 22
-ANSWER = ''
+ANSWER = 871198282
 
+
+def change(letter):
+    total_value = 0
+    for num in letter:
+        value = ord(num) - ord('A') + 1
+        total_value += value
+    return total_value
+
+def count(list):
+    result = 0
+    i = 1
+    for l in list:
+        value_sum = change(l)
+        result += value_sum * i
+        i += 1
+    return result
 
 def solve() -> int:
     
+    with open('./0022_names.txt', 'r+', encoding='utf-8') as f:
+        name_list = f.read().replace('"','').split(',')
+
+    name_list = sorted(name_list)
+    result = count(name_list)
+    return result 
