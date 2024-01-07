@@ -13,12 +13,12 @@ How many different ways can £2 be made using any number of coins?
 """
 
 PID = 31
-ANSWER = ''
+ANSWER = 73682
 
 
 def coin_sum(num, coins):
     
-    sum_list = [0] * num
+    sum_list = [0] * (num + 1)
     sum_list[0] = 1
 
     for coin in coins:
