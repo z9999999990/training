@@ -25,7 +25,7 @@ def reverse(a):
     else:
         return False
 
-def solve() -> int:
+def solve_slowly() -> int:
     list = []
     for i in range(100, 1000):
         for j in range(100, 1000):
@@ -35,3 +35,25 @@ def solve() -> int:
     s = max(list)
     return s
 
+def is_Palindrome(n) -> bool:
+    if n // 100000 != n % 10:
+        return False
+    elif n // 10000 % 10 != n % 100 // 10:
+        return False
+    elif n // 1000 % 10 != n % 1000 //100:
+        return False
+    else:
+        return True
+
+def solve_reverse() ->int:
+    result = 0
+    max_j = 0
+    for i in range(999, 99, -1):
+        for j in range(i, 99, -1):
+                if i >= max_j:
+                    n = i * j
+                    if n > result and is_Palindrome(n):
+                        max_j = j
+                        result = n
+
+    return result
