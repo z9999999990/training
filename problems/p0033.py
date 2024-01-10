@@ -9,12 +9,45 @@ There are exactly four non-trivial examples of this type of fraction, less than 
 If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
 """
 
+import math
+
+
 PID = 33
-ANSWER = ''
+ANSWER = 100
 
 
 def solve() -> int :
+    i_sum = 1
+    j_sum = 1
+
     for i in range(10, 100):
         for j in range(i+1, 100):
             
             old_result = i / j 
+
+            i_a = i // 10
+            i_b = i % 10
+            j_a = j // 10
+            j_b = j % 10
+
+            if i_b == j_a and j_b != 0: 
+                if old_result == (i_a / j_b):
+                    i_sum *= i_a
+                    j_sum *= j_b
+                    #print(i_a, j_b)
+
+            if i_a == j_a and j_b != 0:
+                if old_result == (i_b / j_b):
+                    i_sum *= i_b
+                    j_sum *= j_b
+                    #print(i_b, j_b)
+
+            if i_a == j_b and j_a != 0:
+                if old_result == (i_b / j_a):
+                    i_sum *= i_b
+                    j_sum *= j_a
+
+    max_s = math.gcd(i_sum, j_sum)
+    result = int(j_sum / max_s)
+
+    return result 
