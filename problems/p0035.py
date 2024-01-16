@@ -16,29 +16,30 @@ ANSWER = ''
 
 
 def is_cprimes(i) -> bool:
-    for num in range(2, i):
+    for num in range(2, int(i**0.5)+1):
         if i % num == 0:
             return False
-        
     return True
 
 def find_rotate(i):
-    list = []
+    ro_list = []
     n_str = str(i)
-    for l in range(1, len(i)):
+    for l in range(1, len(n_str)):
         rotate_num = n_str[l:] + n_str[:l]
-        list.append(rotate_num)
-    return list
+        ro_list.append(int(rotate_num))
+    return ro_list
 
 def solve() -> int:
-    result = False
     sum = 0
     for i in range(2, 1000000):
+        result = True
         if is_cprimes(i):
-            list = find_rotate(i)
-            for num in list:
-                result = is_cprimes(num)
-        if result == True:
-            sum += 1    
-    return sum
+            ro_list = find_rotate(i)
+            for num in ro_list:
+                if not is_cprimes(num):
+                    result = False
+                    break
+            if result:
+                sum += 1 
     
+    return sum
