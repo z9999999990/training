@@ -31,5 +31,18 @@ def solve() -> int:
                 sum_list.append(nsum)
 
     num = len(sum_list)
-    
+
+    return num
+
+
+def solve_set() :
+
+    sum_set = set()
+
+    for i in range(2, 101):
+        for j in range(2, 101):
+            nsum = i**j
+            sum_set.add(nsum)
+
+    num = len(sum_set)
     return num
