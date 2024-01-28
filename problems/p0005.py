@@ -4,22 +4,31 @@
 
 """
 Smallest Multiple
-2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any
-remainder.
-
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
 
 
 PID = 5
-ANSWER = ''
+ANSWER = 232792560
 
+def is_multiple(num) -> bool:
+    for i in range(3,21):
+        if num % i == 0:
+            continue
+        else:
+            return False
 
-'''def solve() -> int:
+    return True
 
-    for i in range(2,11):
-        for j in range(2, 11):
-            if i % j == 0 and i / j == 1:
-                continue
-            elif i % j == 0 and i / j != 1:'''
+def solve() -> int:
+    result = False
+    num = 20
+    while not result:
+
+        result = is_multiple(num)
+        if not result:
+            num += 20
+
+    return num
                 
